@@ -1,0 +1,21 @@
+// Zadaca 1
+1. Povrzete se na mongodb
+2. Kreirajte kolekcija za korisnici 'users'
+3. Vmetnete tri podatoka vo taa kolekcija so pomos na funkcijata insert
+4. Izlistajte gi dodadenite podatoci na ekran
+5. Azurirajte eden podatok
+6. Izbrisete eden podatok
+7. Napravete nova kolekcija (accounts)
+8. Izbrisete ja istata
+9. Pa potoa izbrisete ja kolekcijata - istrazete
+
+// Zadaca 2
+1. Kreirajte kolekcija za biblioteka
+2. Vo istata naednas dodadete poveke knigi
+3. Ispecatete gi na ekran
+4. Najdete gi knigite kade godinata na nivno izleguvanje pred 1950 godinata
+5. Azurirajte odredena kniga spored nejzinoto ima t.e Title, promenete ja godinata na nejzinoto izleguvanje
+6. Izbrisete edna kniga od odredena godina. Primer najdete nekoja od 1984 i izbrisete ja
+7. Prasanje: Koja komanda treba da ja iskoristite za da ja izbrisete ovde kolekcijata?
+8. Prasanje: Koja komanda ke vi treba da ja izbrisete databazata?
+
