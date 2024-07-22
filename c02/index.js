@@ -1,9 +1,7 @@
 const mongoose = require("mongoose");
 const User = require("./users");
 
-mongoose.connect(
-  "mongodb+srv://Vangel22:test1234@cluster0.12jzasd.mongodb.net/grupa1?retryWrites=true&w=majority&appName=Cluster0"
-);
+mongoose.connect("");
 // MONGO_USERNAME
 // MONGO_PASSWORD
 // MONGO_HOST
