@@ -1,0 +1,7 @@
+Domasno
+
+1. Napravete schema za biblioteka
+2. Napravete schema za recepti
+3. Napravete schema po vash izbor
+
+- CRUD vo site 3 schema
