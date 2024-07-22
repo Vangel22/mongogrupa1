@@ -12,15 +12,26 @@ mongoose.connect(
 
 async function run() {
   try {
-    const user = new User({
-      name: "Vangel Test",
-      email: "h.vangel22@gmail.com",
-      age: 24,
-    });
-    await user.save();
+    // const user = new User({
+    //   name: "Vangel Test",
+    //   email: "h.vangel22@gmail.com",
+    //   age: 24,
+    // });
+    // await user.save();
+    // await User.create({
+    //   name: "Ivan",
+    //   age: 22,
+    //   hobbies: ["Books", "Programming"],
+    //   email: "vangelTEST@test.com",
+    //   address: {
+    //     street: "Mara Minanova br.9",
+    //     city: "Strumica",
+    //   },
+    // });
 
     const getUsers = await User.find();
-    console.log("ALL USERS", getUsers);
+    // Ispecatete gi site korisnici na ekran
+    // Izbrisete eden korisnik od vasata databaza
   } catch (err) {
     console.log(err.message);
     throw err;
