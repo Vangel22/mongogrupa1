@@ -23,51 +23,74 @@ const addressSchema = new mongoose.Schema({
 });
 
 // Schema e dokumentot kako ke izgleda
-const userSchema = new mongoose.Schema({
-  name: String,
-  // name: {
-  //     type: String
-  // },
-  age: {
-    type: Number,
-    min: 1, // funkcionira za broevi
-    max: 100,
-    validate: {
-      validator: (v) => v % 2 === 0, // dali brojot na godini e paren broj
-      message: (props) => `${props.value} ne e paren broj!`,
+const userSchema = new mongoose.Schema(
+  {
+    name: String,
+    // name: {
+    //     type: String
+    // },
+    age: {
+      type: Number,
+      min: 1, // funkcionira za broevi
+      max: 100,
+      validate: {
+        validator: (v) => v % 2 === 0, // dali brojot na godini e paren broj
+        message: (props) => `${props.value} ne e paren broj!`,
+      },
     },
-  },
-  email: {
-    type: String,
-    minLength: 10, // funkcionira za stringovi
-    lowercase: true,
-    // uppercase: false
-    required: true,
-  },
-  createdAt: {
-    type: Date,
-    immutable: true, // ova pole nikogas nema da se promeni
-    // default: new Date() // 20:15 -> t.e ovaa ke se izvrsi koga ke napravime node index.js t.e koga ke ja startuvame nasata aplikacija
-    default: () => Date.now(),
-  },
-  updatedAt: {
-    type: Date,
-    default: () => Date.now(),
-  },
-  //   address: {
-  //     street: {
-  //         type: String
-  //     },
-  //     city: {
-  //         type: String
-  //     }
-  //   }
-  address: addressSchema,
-  hobbies: [String], // ["fudbal", "rakomet"]
-  bestFriend: {
-    type: mongoose.SchemaTypes.ObjectId,
-    ref: "User",
-  },
+    email: {
+      type: String,
+      minLength: 10, // funkcionira za stringovi
+      lowercase: true,
+      // uppercase: false
+      required: true,
+    },
+    createdAt: {
+      type: Date,
+      immutable: true, // ova pole nikogas nema da se promeni
+      // default: new Date() // 20:15 -> t.e ovaa ke se izvrsi koga ke napravime node index.js t.e koga ke ja startuvame nasata aplikacija
+      default: () => Date.now(),
+    },
+    updatedAt: {
+      type: Date,
+      default: () => Date.now(),
+    },
+    //   address: {
+    //     street: {
+    //         type: String
+    //     },
+    //     city: {
+    //         type: String
+    //     }
+    //   }
+    address: addressSchema,
+    hobbies: [String], // ["fudbal", "rakomet"]
+    bestFriend: {
+      type: mongoose.SchemaTypes.ObjectId,
+      ref: "User",
+    },
+  }
+  // {
+  //   timestamps: true, // ova e polesen pristap kade sto updatedAt i createdAt se menadziraat sami
+  // }
+);
+
+userSchema.methods.sayHi = function () {
+  console.log(`Hi my name is ${this.name}`);
+};
+
+// Middlewares
+// pre - pred toa
+userSchema.pre("save", function (next) {
+  this.updatedAt = Date.now();
+  next();
+});
+
+// post - potoa
+userSchema.post("save", function (doc, next) {
+  doc.sayHi();
+  next();
+  // console.log("Korisnikot e zacuvan!");
 });
 
 // ref e User i go definirame kako prvo pole vo mongoose.model(name, schema, collection)
