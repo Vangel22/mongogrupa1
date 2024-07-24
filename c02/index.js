@@ -15,6 +15,7 @@ async function run() {
       email: "h.vangel22@gmail.com",
       age: 98,
     });
+    // user.name = "Smeneto"
     await user.save(); // ova linija ke go povika .pre() vo users.js
     // await User.create({ // ova linija ke go povika .pre() vo users.js PROVERETE
     //   name: "Ivan",
