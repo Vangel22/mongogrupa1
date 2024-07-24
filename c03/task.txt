@@ -1,0 +1,15 @@
+Opcii:
+1. Zemete korisnik po id - getUserById vo modelot
+
+2. Zemete korisnik po email - getUserByEmail vo modelot
+
+3. Zemete gi korisnicite sortirani po ime - getSortedUsers vo modelot
+
+Controller
+
+1. Napravete nova funkcija za da gi zemete potrebnite podatoci
+2. getSingleUserById - treba da ja povikuva funkcija getUserById
+2. getSingleUserByEmail - treba da ja povikuva funkcija getUserByEmail
+2. getAllUsersSorted - treba da ja povikuva funkcija getSortedUsers
+
+Vo infrastrukturniot kod definarajte gi rutite.

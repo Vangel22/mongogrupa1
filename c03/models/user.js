@@ -43,14 +43,6 @@ const getAll = async () => {
   return await UserModel.find();
 };
 
-// zemete korisnik po id
-
-// zemete korisnik po email
-
-// zemete gi korisnicite sortirani po ime
-
-// kreiraj korisnik
-
 // /user
 const create = async (data) => {
   // req.body ni e data
