@@ -8,6 +8,7 @@ const {
   createUser,
   updateUser,
   removeUser,
+  getSingleUserById,
 } = require("./controllers/user");
 
 const app = express();
@@ -18,5 +19,6 @@ app.get("/user", getAllUsers);
 app.post("/user", createUser);
 app.put("/user/:id", updateUser);
 app.delete("/user/:id", removeUser);
+app.get("/user/:id", getSingleUserById);
 
 app.listen(3000, () => console.log("Server is listening at port 3000!"));

@@ -1,4 +1,10 @@
-const { getAll, create, update, remove } = require("../models/user");
+const {
+  getAll,
+  create,
+  update,
+  remove,
+  getUserById,
+} = require("../models/user");
 
 const getAllUsers = async (req, res) => {
   try {
@@ -37,9 +43,19 @@ const removeUser = async (req, res) => {
   }
 };
 
+const getSingleUserById = async (req, res) => {
+  try {
+    const foundUser = await getUserById(req.params.id);
+    return res.status(200).send(foundUser);
+  } catch (err) {
+    return res.status(500).send("Invalid server error");
+  }
+};
+
 module.exports = {
   getAllUsers,
   createUser,
   updateUser,
   removeUser,
+  getSingleUserById,
 };

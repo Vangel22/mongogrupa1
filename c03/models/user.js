@@ -67,9 +67,14 @@ const remove = async (userId) => {
   return await UserModel.deleteOne({ _id: userId });
 };
 
+const getUserById = async (userId) => {
+  return await UserModel.findOne({ _id: userId });
+};
+
 module.exports = {
   getAll,
   create,
   update,
   remove,
+  getUserById,
 };
