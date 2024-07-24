@@ -41,6 +41,7 @@ const UserModel = mongoose.model("User", userSchema, "users");
 // gi zemame site korisnici
 const getAll = async () => {
   return await UserModel.find();
+  //   .sort({ name: 1 }).limit(10);
 };
 
 // /user
@@ -68,7 +69,10 @@ const remove = async (userId) => {
 };
 
 const getUserById = async (userId) => {
-  return await UserModel.findOne({ _id: userId });
+  return await UserModel.findOne({ _id: userId }).populate({
+    path: "bestFriend",
+    select: "-_id email name",
+  });
 };
 
 module.exports = {

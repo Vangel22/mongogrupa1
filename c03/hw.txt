@@ -1,0 +1,9 @@
+Da go napravite istoto od chas 3, no so model za biblioteka.
+
+Cekori:
+
+1. Controller za biblioteka
+
+2. Model za biblioteka
+
+3. Ruti za pristap do modelot

@@ -19,6 +19,10 @@ app.get("/user", getAllUsers);
 app.post("/user", createUser);
 app.put("/user/:id", updateUser);
 app.delete("/user/:id", removeUser);
-app.get("/user/:id", getSingleUserById);
+// Imame dva get povici so ista sema /user/dinamicen_parametar
+app.get("/user/:id", getSingleUserById); // user/1shuishufdshufi
+// app.get("/user/:email", getSingleUserByEmail); // user/test@gmail.com
+
+// app.get("/user/email/:email", getSingleUserByEmail); // Ova ke raboti bidejki e razlicna rutata
 
 app.listen(3000, () => console.log("Server is listening at port 3000!"));
